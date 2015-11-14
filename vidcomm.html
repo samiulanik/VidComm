@@ -1,0 +1,519 @@
+<!doctype html>
+<html>
+
+<head>
+    <link href="resources/css/video-js.css" rel="stylesheet">
+    <link href="resources/css/jquery-ui.css" rel="stylesheet">
+    <link href="resources/css/videojs.markers.custom.non-overlay.css" rel="stylesheet">
+    <link href="resources/css/comment-categorization-style.css" rel="stylesheet">
+</head>
+
+<body style="background-color: #F8F8F8; height:100vh;">
+    <div class="container" style="position: relative; height:100%">
+        <div style="position: relative; left: 0px; height: 10vh; width: 100%;">
+            <!-- <INPUT TYPE="button" id="startTimeButton" class="btn" VALUE="Start" style="position: relative; left: 40vw; top:5vh; " />
+            <INPUT TYPE="button" id="submitAnswerButton" class="btn" VALUE="Submit" style="position: relative; left: 45vw; top:5vh; " />
+            <p id="timeDisplay" style="position: relative; left: 60vw; top: -1vh; font-size: 3vh; color:blue; "> </p> -->
+        </div>
+        <div style="position: relative; left: 0px;  width: 23vw;">
+            <ul style="list-style:none;padding:2px; border: 2px solid black; width: 95%; height: 35vh; background-color: white;">
+                <li class="category" id="appreciation">
+                    <input type="checkbox" class="checkbox" id="appreciation-checked" />
+                    <h3 id="appreciation-text"></h3>
+                    <progress class="category-progress-appreciation">
+                    </progress>
+                </li>
+                <li class="category" id="suggestion">
+                    <input type="checkbox" class="checkbox" id="suggestion-checked" />
+                    <h3 id="suggestion-text"></h3>
+                    <progress class="category-progress-suggestion">
+                    </progress>
+                </li>
+                <li class="category" id="question">
+                    <input type="checkbox" class="checkbox" id="question-checked" />
+                    <h3 id="question-text"></h3>
+                    <progress class="category-progress-question">
+                    </progress>
+                </li>
+                <li class="category" id="troubleshooting">
+                    <input type="checkbox" class="checkbox" id="troubleshooting-checked" />
+                    <h3 id="troubleshooting-text"></h3>
+                    <progress class="category-progress-troubleshooting">
+                    </progress>
+                </li>
+                <li class="category" id="link">
+                    <input type="checkbox" class="checkbox" id="link-checked" />
+                    <h3 id="link-text"></h3>
+                    <progress class="category-progress-link">
+                    </progress>
+                </li>
+                <li class="category" id="select-all">
+                    <input type="checkbox" class="checkbox" id="all-checked" style="top: 1.5vh;" />
+                    <h3>Check All</h3>
+                </li>
+            </ul>
+            <br>
+            <ul style="list-style:none;padding:0.5px; border: 2px solid black; width: 22vw; height: 20vh; background-color: white;">
+                <li>
+                    <input type="radio" class="radio-button" id="total-checked" style="top: 45vh; position:absolute;" name="comment-type" value="all" />
+                    <h3 id="total-text" style="top: 43vh;">Show All Comments</h3>
+                </li>
+                <li style="position:relative;">
+                    <input type="radio" class="radio-button" id="general-checked" style="top:7.5vh; position:relative;" name="comment-type" value="general" />
+                    <h3 id="general-text" style="top: 5.5vh; ">Show General Comments Only</h3>
+                </li>
+                <li style="position:relative;">
+                    <input type="radio" class="radio-button" id="timed-checked" style="top: 9.5vh; position:relative" name="comment-type" value="time" />
+                    <h3 id="timed-text" style="top: 7.5vh; ">Show Timed Comments Only</h3>
+                </li>
+            </ul>
+        </div>
+        <div id="line" style="z-index: 1000000; position:absolute; left:22.5vw; top:0px"></div>
+        <div class="video-container" style=" position: absolute; left: 22.5vw; top: 11.5vh;">
+            <video id="photoshop_video_tutorial" controls preload="none" class="video-js vjs-default-skin" width="1200" height="675">
+                <source src="resources/videos/photoshop_demo.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="comment-container" style="position: absolute; left: 85vw; top: 11.5vh;"></div>
+        <div class="comment-posting" style="position: absolute; top: 85vh; left: 22.5vw; background-color: white; width:1200px;">
+            <textarea name="text" class="validate[required,length[6,300]] comment-input" id="comment" placeholder="Comment"></textarea>
+            <select id="comment-type" style="position: relative; top:14vh; left: 26vw; font-size:3">
+                <option value="appreciation">Appreciation</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="question">Question</option>
+                <option value="troubleshooting">Troubleshooting</option>
+                <option value="link">Link</option>
+            </select>
+            <p style=" position:relative; top: 10.5vh; left: 34vw;">Timed Comment </p>
+            <input type="checkbox" id="timed-comment" />
+            <p style=" position:relative; top: 3.5vh; left: 42vw;">Content Highlight </p>
+            <input type="checkbox" id="content-highlight" style="position: relative; top: -.7vh; left: 48vw" />
+            <button type="button" id="comment-post" class="btn">Post</button>
+            <p id="content-hightlight-text" style=" position:relative;left:23vw; top: -23vh; visibility:hidden; color: red; font-size:15px;">Please click inside video to highlight the content </p>
+        </div>
+        <!-- div class="comment-container-below" style="position: absolute; left:430px ; top: 950px; width: 1200px; visibility:visible;"> </div>
+        -->
+    </div>
+</body>
+<script src="resources/js/video.js"></script>
+<script src="resources/js/jquery-1.11.1.js"></script>
+<script src="resources/js/jquery-ui.js"></script>
+<script src="resources/js/jquery.debounce.js"></script>
+<script src="resources/js/vidcomm.js"></script>
+<script src="resources/js/svg.js"></script>
+<script>
+var player = videojs('photoshop_video_tutorial');
+var markers = [];
+var counters = [];
+//var contentPosition;
+var totalComment = 0;
+var running = false;
+var endTime = null;
+var timerID = null;
+var now = null;
+
+
+
+function readJson(callback) {
+    $.getJSON('resources/json/comments_demo.json', function(data) {
+        $.each(data, function(index, comment) {
+            markers.push(comment);
+        });
+        callback();
+        showCategorization();
+    });
+}
+
+counters["appreciation"] = 0;
+counters["suggestion"] = 0;
+counters["question"] = 0;
+counters["troubleshooting"] = 0;
+counters["link"] = 0;
+
+
+
+readJson(function() {
+    for (var i = 0; i < markers.length; i++) {
+        counters[markers[i].type]++;
+    }
+    totalComment = markers.length;
+
+});
+
+
+
+
+function showCategorization() {
+
+    $("#appreciation-text").text("Appreciation " + counters["appreciation"]);
+    $("#suggestion-text").text("Suggestion " + counters["suggestion"]);
+    $("#question-text").text("Question " + counters["question"]);
+    $("#troubleshooting-text").text("Troubleshooting " + counters["troubleshooting"]);
+    $("#link-text").text("Link " + counters["link"]);
+    /*$("#total-text").text("See all " + totalComment + " comments");*/
+
+    var maxType = Math.max(counters["appreciation"], counters["suggestion"], counters["question"], counters["troubleshooting"], counters["link"]);
+
+    $(".category-progress-appreciation").attr("max", maxType);
+    $(".category-progress-appreciation").attr("value", counters["appreciation"]);
+    $(".category-progress-suggestion").attr("max", maxType);
+    $(".category-progress-suggestion").attr("value", counters["suggestion"]);
+    $(".category-progress-question").attr("max", maxType);
+    $(".category-progress-question").attr("value", counters["question"]);
+    $(".category-progress-troubleshooting").attr("max", maxType);
+    $(".category-progress-troubleshooting").attr("value", counters["troubleshooting"]);
+    $(".category-progress-link").attr("max", maxType);
+    $(".category-progress-link").attr("value", counters["link"]);
+
+}
+
+function initialization() {
+
+    var $radios = $('input:radio[name=comment-type]');
+    if ($radios.is(':checked') === false) {
+        $radios.filter('[value=all]').prop('checked', true);
+    }
+
+    $("#appreciation-checked").prop("checked", true);
+    $("#suggestion-checked").prop("checked", true);
+    $("#question-checked").prop("checked", true);
+    $("#troubleshooting-checked").prop("checked", true);
+    $("#link-checked").prop("checked", true);
+    $("#all-checked").prop("checked", true);
+
+
+
+}
+
+function checkboxDisable(flag) {
+
+    $("#appreciation-checked").prop("disabled", flag);
+    $("#suggestion-checked").prop("disabled", flag);
+    $("#question-checked").prop("disabled", flag);
+    $("#troubleshooting-checked").prop("disabled", flag);
+    $("#link-checked").prop("disabled", flag);
+    $("#all-checked").prop("disabled", flag);
+
+
+}
+
+// function startTimer() {
+//     running = true
+//     now = new Date()
+//     now = now.getTime()
+//         // change last multiple for the number of minutes
+//     endTime = now + (1000 * 60 * 5)
+//     showCountDown()
+// }
+
+// function showCountDown() {
+//     var now = new Date()
+//     now = now.getTime()
+//     if (endTime - now <= 0) {
+//         stopTimer()
+
+//         alert("Time is up.")
+//     } else {
+//         var delta = new Date(endTime - now)
+//         var theMin = delta.getMinutes()
+//         var theSec = delta.getSeconds()
+//         var theTime = theMin
+//         theTime += ((theSec < 10) ? ":0" : ":") + theSec
+//             //document.forms[0].timerDisplay.value = theTime
+//         $('#timeDisplay').text(theTime);
+
+//         if (running) {
+//             timerID = setTimeout(showCountDown, 1000)
+//         }
+//     }
+// }
+
+// function stopTimer() {
+//     clearTimeout(timerID)
+//     running = false
+//     var now = new Date()
+//     now = now.getTime()
+//     var requiredTime = 300 - (endTime - now) / 1000;
+
+//     var send = JSON.stringify({
+//         participantId: 1,
+//         system: "categorization",
+//         video: "two",
+//         task: 1,
+//         time: requiredTime,
+//         //answers: answerList.join(' ')
+//     });
+//     //console.log(requiredTime+" "+answerList);
+//     $.ajax({
+//         url: '/saveLog',
+//         type: 'POST',
+//         data: send,
+//         contentType: "application/json",
+//         dataType: 'json',
+//         success: function(response) {
+//             console.log(response);
+//         },
+//         error: function(error) {
+//             console.log(error);
+//         }
+//     });
+
+// }
+
+//         function timeActivity() {
+
+//             $("#startTimeButton").click(function() {
+
+//                 //alert("start timer");
+//                 startTimer();
+
+//             });
+
+//             $("#submitAnswerButton").click(function() {
+
+//                 stopTimer();
+
+//             });
+
+//         }
+
+
+$(document).ready(function() {
+
+    initialization();
+
+    showCategorization();
+
+    //checkboxDisable(true);
+
+    $("#content-highlight").click(function() {
+
+        if (this.checked) {
+
+
+            $('#timed-comment').prop('checked', this.checked);
+
+            $('#timed-comment').prop('disabled', true);
+
+
+            if ($("#timed-comment").is(':checked')) {
+
+                player.pause();
+
+                var barHeight, minutes, seconds, seekBar, timeInSeconds;
+                //seekBar = player.controlBar.progressControl.seekBar;
+                var position = ((player.currentTime() - .5) / player.duration()) * 100;
+                //var mousePosition = (event.pageX - $(seekBar.el()).offset().left) / seekBar.width();
+                timeInSeconds = player.currentTime();
+                // if (timeInSeconds === player.duration()) {
+                //     timeInSeconds = timeInSeconds - 0.1;
+                // }
+                minutes = Math.floor(timeInSeconds / 60);
+                seconds = Math.floor(timeInSeconds - minutes * 60);
+                if (seconds < 10) {
+                    seconds = "0" + seconds;
+                }
+                /* $('#vjs-tip-inner').text("" + minutes + ":" + seconds);
+                 barHeight = $('.vjs-control-bar').height();*/
+                $("#vjs-tip-arrow").css("top", "" + -20 + "px").css("left", "" + position + "%").css("visibility", "visible");
+
+
+            }
+
+            $('#content-hightlight-text').css({
+                'visibility': "visible"
+            });
+            player.pause();
+        } else {
+            $('#content-hightlight-text').css({
+                'visibility': "hidden"
+            });
+
+            $('.container').find("#anchor").remove();
+            $('#timed-comment').prop('checked', false);
+            $('#timed-comment').prop('disabled', false);
+
+            $("#vjs-tip-arrow").css({
+                "visibility": 'hidden'
+            });
+
+        }
+    });
+
+
+    $('#photoshop_video_tutorial').click(function(e) {
+
+        var x = e.pageX,
+            y = e.pageY;
+        var posX = $(this).offset().left,
+            posY = $(this).offset().top;
+
+        //contentPosition = (x - posX - 20) + "," + (y - posY - 20);
+
+        var container = $('.container');
+
+        //console.log(contentPosition);
+
+        if ($('#content-highlight').prop('checked')) {
+
+            player.pause();
+            //container.empty();
+            //console.log("test");
+            container.find("#anchor").remove();
+            container.append("<div class = 'anchor' id = 'anchor'> </div>");
+            $('#anchor').css({
+                display: "block",
+                left: x - 20,
+                top: y - 20
+            });
+
+
+            $("#anchor").draggable({
+                containment: 'parent'
+            });
+
+
+
+        }
+
+    });
+
+
+    $("#comment-post").click(function() {
+
+        var obj = {};
+
+        var contentPosition = ($("#anchor").position().left - $('.video-container').position().left) + "," + ($("#anchor").position().top - $('.video-container').position().top);
+
+
+        console.log(contentPosition);
+
+        obj.time = $('#timed-comment').is(':checked') == true ? player.currentTime() : -1;
+
+        obj.text = $("#comment").val();
+
+        obj.type = $("#comment-type").val();
+
+        obj.contentPosition = ($('#content-highlight').is(':checked') == true) && ($('#timed-comment').is(':checked') == true) ? contentPosition : "none";
+
+        //console.log(obj.contentPosition);
+        $("#comment").val("");
+
+        counters[obj.type]++;
+        totalComment++;
+        showCategorization();
+
+        $('#content-hightlight-text').css({
+            'visibility': "hidden"
+        });
+
+        $('.container').find("#anchor").remove();
+
+        $("#content-highlight").prop("checked", false);
+        $("#timed-comment").prop("checked", false);
+
+        $("#vjs-tip-arrow").css({
+            "visibility": 'hidden'
+        });
+
+
+        player.markers.postComment(obj, $('input[name="comment-type"]:checked').val());
+
+
+    });
+
+    $("#comment").click(function() {
+        player.pause();
+    });
+
+
+
+
+});
+
+
+
+
+
+
+
+player.markers({
+    'markers': markers
+});
+
+$("input:radio[name=comment-type]").click(function(e) {
+
+    var value = $(this).val();
+
+    if (value != "all") {
+        //checkboxDisable(false);
+
+    } else {
+        //checkboxDisable(true);
+        $("#appreciation-checked").prop("checked", true);
+        $("#suggestion-checked").prop("checked", true);
+        $("#question-checked").prop("checked", true);
+        $("#troubleshooting-checked").prop("checked", true);
+        $("#link-checked").prop("checked", true);
+        player.markers.total(true, $('input[name="comment-type"]:checked').val());
+    }
+    player.markers.radioButtonClickAction(value);
+
+})
+
+$("#appreciation-checked").click(function() {
+
+    if (!this.checked)
+        $("#all-checked").prop("checked", this.checked);
+
+    // if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.checkboxClickAction("appreciation", this.checked, $('input[name="comment-type"]:checked').val());
+});
+$("#suggestion-checked").click(function() {
+    if (!this.checked)
+        $("#all-checked").prop("checked", this.checked);
+    //if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.checkboxClickAction("suggestion", this.checked, $('input[name="comment-type"]:checked').val());
+});
+$("#question-checked").click(function() {
+    if (!this.checked)
+        $("#all-checked").prop("checked", this.checked);
+    //if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.checkboxClickAction("question", this.checked, $('input[name="comment-type"]:checked').val());
+});
+$("#troubleshooting-checked").click(function() {
+    if (!this.checked)
+        $("#all-checked").prop("checked", this.checked);
+    // if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.checkboxClickAction("troubleshooting", this.checked, $('input[name="comment-type"]:checked').val());
+});
+$("#link-checked").click(function() {
+    if (!this.checked)
+        $("#all-checked").prop("checked", this.checked);
+    //if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.checkboxClickAction("link", this.checked, $('input[name="comment-type"]:checked').val());
+});
+
+$("#all-checked").click(function() {
+
+
+    $("#appreciation-checked").prop("checked", this.checked);
+    $("#suggestion-checked").prop("checked", this.checked);
+    $("#question-checked").prop("checked", this.checked);
+    $("#troubleshooting-checked").prop("checked", this.checked);
+    $("#link-checked").prop("checked", this.checked);
+
+    //if ($('input[name="comment-type"]:checked').val() != "all")
+    player.markers.total(this.checked, $('input[name="comment-type"]:checked').val());
+});
+
+// $("#general-checked").click(function() {
+
+
+//     player.markers.generalComment(this.checked);
+
+
+// });
+</script>
+
+</html>

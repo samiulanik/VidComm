@@ -1,0 +1,443 @@
+[
+  {
+    "userName": "R",
+    "time": -1,
+    "text": "yay, the full version! :) what microphone you use? i dont hear so much like  your breathing on the mice or.. you know? it sounds clear :P",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d1"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@R I use a zoom H2",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d2"
+  },
+  
+  {
+    "userName": "KO",
+    "time": -1,
+    "text": "Very GOOD Tut, many thanks.......",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d3"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@k glad you liked it!",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d4"
+  },
+  {
+    "userName": "NK",
+    "time": -1,
+    "text": "nice tutorial, Hope to see more from you, thanks",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d5"
+  },
+ 
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@shahbazalitalpur camtasia",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d6"
+  },
+  {
+    "userName": "CC",
+    "time": -1,
+    "text": "thanks for the tutorial helped me a lot :)",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d7"
+  },
+
+  {
+    "userName": "TL",
+    "time": 300,
+    "text": "WTH u did at the end i didnt get it how did u brush :O i tried nothing  happens :x",
+    "type": "troubleshooting",
+    "contentPosition": "300,273",
+    "commentId": "d8"
+  },
+  {
+    "userName": "N",
+    "time": -1,
+    "text": "excellent",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d9"
+  },
+  {
+    "userName": "TC",
+    "time": -1,
+    "text": "just subbed. i plan on getting a better photo shop. i take a a lot of pics  and i have a friend that does photography. any suggestions that might be  compatible with my laptop plz let me know :)",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d10"
+  },
+  {
+    "userName": "M",
+    "time": -1,
+    "text": "soo if I wanted to change my skintone to a brighter tone do I just do the  same stuff and just kinda play around for a brighter tone instead of a  darker one?",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d11"
+  },
+  {
+    "userName": "D",
+    "time": -1,
+    "text": "The 3rd added layer could be made with a fill layer with a solid color.  This makes it much easier to adjust the color afterwards. Without  scientific proof I would say it take up less RAM since it's an instruction  layer rather than a pixel layer. Which definitely is an advantage when  working with high resolution images. ",
+    "type": "suggestions",
+    "contentPosition": "none",
+    "commentId": "d12"
+  },
+  {
+    "userName": "V",
+    "time": -1,
+    "text": "can you put a link of the picture so we can edit along with you?",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d13"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@I Yep, there is source files on my website. I just added the link  to the description..",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d14"
+  },
+  {
+    "userName": "CM",
+    "time": -1,
+    "text": "What camera do you have? It´s a beautifull picture ",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d15"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@M This was taken with a 5D mark II",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d16"
+  },
+  {
+    "userName": "FL",
+    "time": -1,
+    "text": "Best walk through ive seen yet. ",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d17"
+  },
+  {
+    "userName": "FL",
+    "time": -1,
+    "text": "Best walk through ive seen yet. ",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d18"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "@T cool, thanks.",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d19"
+  },
+
+  {
+    "userName": "H",
+    "time": -1,
+    "text": "Thanks, made that really easy for me.",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d20"
+  },
+  {
+    "userName": "M",
+    "time": 250,
+    "text": "Ahhh...alt + backspace for collor doesn't work for me :( ",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d21"
+  },
+  {
+    "userName": "TV",
+    "time": -1,
+    "text": "TNX dude... helped a lot..... can I show this video to other in a  powerpoint presentation???",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d22"
+  },
+
+  {
+    "userName": "EK",
+    "time": -1,
+    "text": "so helpful..tq",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d23"
+  },
+  {
+    "userName": "TJ",
+    "time": 330,
+    "text": "when I get into the last part , the new layer , color and then soft like .  When go to add new mask layer its just blank white ... how do you get the  black and white silouette in there ?",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d24"
+  },
+  {
+    "userName": "GB",
+    "time": 43,
+    "text": "Whenever I drag the wand around the face, it automatically just outlines  the entire image. I can't get it to follow my lead around the skin without  it breaking and the whole pic...",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d25"
+  },
+  {
+    "userName": "A",
+    "time": 250,
+    "text": "hey thanx for the video but can u help me how to change tht layer  color(brown)(4mins : 10seconds) u did, i tried alt + backspace still it  didnt come ",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d26"
+  },
+  {
+    "userName": "CB",
+    "time": -1,
+    "text": "Nice !",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d27"
+  },
+
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "wow great thx",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d28"
+  },
+
+  {
+    "userName": "MR",
+    "time": -1,
+    "text": "I almost died laughing when you removed her eyes and mouth LOOL",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d29"
+  },
+
+  {
+    "userName": "C",
+    "time": 330,
+    "text": "+T  I could not follow the ending. How to smooth the edges at the  end? When I tried the brush color is way darker than the changes I made on  the face and also there appears a distinct line between face and hair.  Please show the ending clearly and which options to choose.﻿",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d30"
+  },
+
+  {
+    "userName": "PG",
+    "time": -1,
+    "text": "good video, help full, next time make sure to make video that looks bit  simpler.﻿",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d31"
+  },
+  {
+    "userName": "T",
+    "time": -1,
+    "text": "During this tutorial I found out I could make myself look green... So I  then made myself green and muscular....﻿",
+    "type": "suggestions",
+    "contentPosition": "none",
+    "commentId": "d32"
+  },
+
+  {
+    "userName": "CB",
+    "time": -1,
+    "text": "Thank you for making this video, it is great. I looked at a lot of them and  yours is the best BY FAR.﻿",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d33"
+  },
+  {
+    "userName": "TO",
+    "time": -1,
+    "text": "Very Good! thanks﻿",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d34"
+  },
+  {
+    "userName": "PC",
+    "time": -1,
+    "text": "Thank you :)﻿",
+    "type": "appreciation",
+    "contentPosition": "none",
+    "commentId": "d35"
+  },
+
+   {
+    "userName": "PC",
+    "time": 57,
+    "text": "I use lasso tool. It gives nice results actually ﻿",
+    "type": "suggestion",
+    "contentPosition": "50,210",
+    "commentId": "d36"
+  },
+
+  {
+    "userName": "C",
+    "time": 152,
+    "text": "I dont have the color balance tool! please help!! I am stuck!!﻿",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d37"
+  },
+
+
+  {
+    "userName": "CK",
+    "time": 152,
+    "text": "I dont have the color balance tool! please help!! I am stuck!!﻿",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d37"
+  },
+
+  {
+    "userName": "U",
+    "time": -1,
+    "text": "Here is one good tutorial: https://www.facebook.com/groups/917987558212787/﻿",
+    "type": "link",
+    "contentPosition": "none",
+    "commentId": "d38"
+  },
+
+
+  {
+    "userName": "O",
+    "time": 152,
+    "text": "make sure the layer is always unlocked. otherwise you might not be able to select!﻿",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d39"
+  },
+
+  {
+    "userName": "L",
+    "time": 261,
+    "text": "I dont have refine edge in CS3!! How can i get that!! I am stuck!!﻿",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d40"
+  },
+
+
+  {
+    "userName": "M",
+    "time": 94,
+    "text": "ctrl space does not work for me!! what to do!!! help!!",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d41"
+  },
+
+  {
+    "userName": "N",
+    "time": 94,
+    "text": "instead of ctrl space use other menu option!",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d42"
+  },
+  {
+    "userName": "M",
+    "time": 94,
+    "text": "wand tool doest not allow me to select things. it says empty object! why??",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d43"
+  },
+
+  {
+    "userName": "L",
+    "time": 261,
+    "text": "How to get the refine edge in elements 11? I ma stuck in this step! someone plz!!",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d44"
+  },
+
+  {
+    "userName": "L",
+    "time": 93,
+    "text": "I could not find the opacity here! I am stuck man!!",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d45"
+  },
+
+
+  {
+    "userName": "L",
+    "time": 220,
+    "text": "How to the curves here ? did i missed something? I am kinda stopped here in this step!",
+    "type": "troubleshooting",
+    "contentPosition": "1100,123",
+    "commentId": "d46"
+  },
+
+
+  {
+    "userName": "L",
+    "time": 134,
+    "text": "How to get this kind of menu? I am not getting it in photoshop elements! helppppß",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d47"
+  },
+
+
+  {
+    "userName": "U",
+    "time": 99,
+    "text": "photoshop lightroom dont have this wand tool. so be careful while working with lightroom!",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d48"
+  },
+  
+  {
+    "userName": "N",
+    "time": 99,
+    "text": "If you are planning to use lasso tool then be cautios. sometimes this lasso tool works weirdly!",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d49"
+  },
+
+
+  {
+    "userName": "N",
+    "time": 57,
+    "text": "I have a question. How do you properly select things in touch screen? I was just curios!",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d450"
+  }
+]
+
