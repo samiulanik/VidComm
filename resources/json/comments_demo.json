@@ -434,10 +434,40 @@
   {
     "userName": "N",
     "time": 57,
-    "text": "I have a question. How do you properly select things in touch screen? I was just curios!",
+    "text": "I have tried the lasso tool works like a charm!",
     "type": "suggestion",
     "contentPosition": "none",
     "commentId": "d450"
+  },
+
+  {
+    "userName": "QT",
+    "time": 57,
+    "text": "How do you properly select things in touch screen? I was just curios!",
+    "type": "question",
+    "contentPosition": "none",
+    "commentId": "d80"
+  },
+
+  {
+    "userName": "W",
+    "time": 57,
+    "text": "I am having some weird colors here. can anyone give some solution!",
+    "type": "troubleshooting",
+    "contentPosition": "none",
+    "commentId": "d10"
+  },
+
+  {
+    "userName": "K",
+    "time": 57,
+    "text": "selection works really good here!",
+    "type": "suggestion",
+    "contentPosition": "none",
+    "commentId": "d11"
   }
+  
+  
+
 ]
 
