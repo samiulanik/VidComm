@@ -897,7 +897,7 @@
 
                         if (commentList[i].time == -1) {
 
-                            belowCommentContainer.append("<li class ='vjs-bottom-comment-list' id='" + commentList[i].key + "''>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic-youtube'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
+                            belowCommentContainer.append("<li class ='vjs-bottom-comment-list' id='" + commentList[i].key + "''>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic-youtube'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
 
                             belowCommentContainer.css({
                                 "visibility": 'visible',
@@ -905,7 +905,7 @@
 
                         } else {
 
-                            belowCommentContainer.append("<li class ='vjs-bottom-comment-list' id='" + commentList[i].key + "''>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic-youtube'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "  " + "<a href ='#' class='time-hyperlink' id= '" + commentList[i].commentId + "-hlink" + " 'onClick= 'player.currentTime(" + commentList[i].markerPositionTime + "); player.pause();' >" + "<br> time: " + Math.floor(commentList[i].markerPositionTime / 60) + ":" + commentList[i].markerPositionTime % 60 + "</a>" + "</div></div></div></li>")
+                            belowCommentContainer.append("<li class ='vjs-bottom-comment-list' id='" + commentList[i].key + "''>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic-youtube'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" +  "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "  " + "<a href ='#' class='time-hyperlink' id= '" + commentList[i].commentId + "-hlink" + " 'onClick= 'player.currentTime(" + commentList[i].markerPositionTime + "); player.pause();' >" + "<br> time: " + Math.floor(commentList[i].markerPositionTime / 60) + ":" + commentList[i].markerPositionTime % 60 + "</a>" + "</div></div></div></li>")
                             belowCommentContainer.css({
                                 "visibility": 'visible',
                             });

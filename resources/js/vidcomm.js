@@ -643,9 +643,9 @@
                     if (markerTime == commentList[i].markerPositionTime && commentList[i].markerPositionTime != -1 && $.inArray(commentList[i].type, checkTrueList) != -1) {
 
                         if (commentList[i].contentPosition == "none")
-                            commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
+                            commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
                         else
-                            commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "<br> <span style='color:#ff0000;'>" + textCotentHighlight + "</span></div></div></div></li>")
+                            commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" +  "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "<br> <span style='color:#ff0000;'>" + textCotentHighlight + "</span></div></div></div></li>")
 
 
                         commentContainer.css({
@@ -1152,19 +1152,6 @@
 
                 commentContainer.empty();
 
-                //commentContainer.empty();
-
-
-                // for (var i = 0; i < commentList.length; i++) {
-
-
-                //     commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
-                //     commentContainer.css({
-                //         "visibility": 'visible',
-                //     });
-
-
-                // }
 
                 var counter = 0;
                 for (var i = 0; i < commentList.length; i++) {
@@ -1179,7 +1166,7 @@
                 for (var i = 0; i < commentList.length; i++) {
 
                     if ($.inArray(commentList[i].type, checkTrueList) != -1) {
-                        commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
+                        commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
                         commentContainer.css({
                             "visibility": 'visible',
                         });
@@ -1204,7 +1191,7 @@
                 for (var i = 0; i < commentList.length; i++) {
 
                     if (commentList[i].markerPositionTime == -1 && $.inArray(commentList[i].type, checkTrueList) != -1) {
-                        commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class = 'comment-id'>" + commentList[i].commentId + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
+                        commentContainer.append("<li class ='vjs-comment-list' id='" + commentList[i].key + "' style='border-right:" + colorList[commentList[i].type] + " solid 5px;'>" + "<div class='l-media'>" + "<div class='l-media__figure'>" + "<div class = 'comment-profile-pic'>" + "</div>" + "</div>" + "<div class='l-media__body'>" + "<div class = 'comment-user-name'>" + commentList[i].userName + "</div>" + "<div class='.vjs-bottom-comment-list'>" + commentList[i].text + "</div></div></div></li>")
                         commentContainer.css({
                             "visibility": 'visible',
                         });

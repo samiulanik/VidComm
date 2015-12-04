@@ -198,10 +198,10 @@
   },
   {
     "userName": "GB",
-    "time": -1,
+    "time": 59,
     "text": "Whenever I drag the wand around the face, it automatically just outlines the entire image. I can't get it to follow my lead around the skin without it breaking and the whole pic...",
     "type": "troubleshooting",
-    "contentPosition": "none",
+    "contentPosition": "750,450",
     "commentId": "d25"
   },
   {
@@ -293,7 +293,7 @@
    {
     "userName": "PC",
     "time": 57,
-    "text": "I am having a black box after using the wand selection. please help!!",
+    "text": "I am having a black box after using the wand selection. please help!! ﻿",
     "type": "troubleshooting",
     "contentPosition": "750,450",
     "commentId": "d36"
@@ -366,7 +366,7 @@
   },
   {
     "userName": "M",
-    "time": -1,
+    "time": 100,
     "text": "wand tool doest not allow me to select the eye and face. it says empty object! why??",
     "type": "troubleshooting",
     "contentPosition": "none",

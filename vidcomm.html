@@ -115,7 +115,7 @@ var now = null;
 
 
 function readJson(callback) {
-    $.getJSON('resources/json/comments_demo.json', function(data) {
+    $.getJSON('resources/json/comments_demo_time.json', function(data) {
         $.each(data, function(index, comment) {
             markers.push(comment);
         });
