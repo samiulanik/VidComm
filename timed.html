@@ -72,7 +72,7 @@
         <div id="line" style="z-index: 1000000; position:absolute; left:22.5vw; top:0px"></div>
         <div class="video-container" style=" position: absolute; left: 22.5vw; top: 11.5vh;">
             <video id="photoshop_video_tutorial" controls preload="none" class="video-js vjs-default-skin" width="1200" height="675">
-                <source src="resources/videos/photoshop_demo.mp4" type="video/mp4">
+                <source src="resources/videos/avi_demo.mp4" type="video/mp4">
             </video>
         </div>
         <div class="comment-container" style="position: absolute; left: 85vw; top: 11.5vh;"></div>
@@ -119,7 +119,7 @@ var now = null;
 
 
 function readJson(callback) {
-    $.getJSON('resources/json/comments_demo_time.json', function(data) {
+    $.getJSON('resources/json/comments_demo_avi.json', function(data) {
         $.each(data, function(index, comment) {
             markers.push(comment);
         });

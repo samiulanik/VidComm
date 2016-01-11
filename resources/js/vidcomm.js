@@ -29,6 +29,7 @@
             commentList = [],
             draw = null,
             line = null,
+            lineOutline = null,
             markerPositionList = [],
             colorList = [],
             checkList = {},
@@ -675,13 +676,26 @@
 
 
             draw = SVG('line').size(1200, 600);
+
+            lineOutline = draw.line(x1, y1, x2, y2).stroke({
+                width: 7,
+                color: 'white',
+
+            });
+            
             line = draw.line(x1, y1, x2, y2).stroke({
-                width: 3,
+                width: 4,
                 color: 'red'
             });
 
+            
+
+
             var marker = draw.marker(10, 15, function(add) {
-                add.path('M2,2 L2,13 L8,7 L2,2').fill('red');
+                add.path('M2,2 L2,13 L8,7 L2,2').fill('red').stroke({
+                width: 0.5,
+                color: 'white'
+            });
             });
 
             line.marker('end', marker);
